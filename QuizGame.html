@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Quiz Game Attempt</title>
+		<script>
+			let answers = ['Yes', 'Sure', 'Maybe', 'No']
+			let question = 'Why is School Needed';
+			
+			function createQuestion() {
+				document.getElementById("answersBox").innerHTML = "";
+				document.getElementById("questionBox").innerHTML = "questions";
+				for (let i = 0; i < answers.length; i++) {
+					document.getElementById("answersBox").innerHTML += `<input type="radio" id="answer${i+1}" name="selection" value="${answers[i]}"><label for="${answers[i]}">${answers[i]}</label>`
+					
+				}
+			}
+			
+			function checkAnswer() {
+				if (document.getElementById("answer4").checked) {
+					document.getElementById("responseBox").innerHTML = "You're So Smart";
+				} else {
+					document.getElementById("responseBox").innerHTML = "You're So Dumm";
+				}
+			}
+		</script>
+	</head>
+	<body onload="createQuestion()">
+		<div id="questionBox">
+		</div>
+		<div id="answersBox">
+		</div>
+		<button id="submit" onClick="checkAnswer()">Lets Goooooooo!</button>
+		<div id="responseBox">
+		</div>
+	</body>
+</html>
